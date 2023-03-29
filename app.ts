@@ -36,6 +36,7 @@ async function isFounder(name: string): Promise<boolean> {
             found = true
             // Stop reading and clean-up resources
             readStream.close()
+            readLine.close()
         }
     })
 
