@@ -22,13 +22,11 @@ async function userInterface(): Promise<void> {
 }
 
 async function isFounder(name: string): Promise<boolean> {
-    const readStream = fs.createReadStream("founders.txt")
+    const readStream = fs.createReadStream("founders.txt", { encoding: "utf-8" })
 
-    //@ts-ignore
     const readLine = readline.createInterface({
         input: readStream,
         crlfDelay: Infinity,
-        encoding: "UTF-8",
     })
 
     let found: boolean = false
